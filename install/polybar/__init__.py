@@ -16,6 +16,7 @@ def install():
 
 def check():
     utilities.system.check_binary('polybar')
+    utilities.system.check_binary('polybar-msg')
     utilities.system.check_binary('dunstctl')
 
     utilities.fs.check_file(POLYBAR_CONFIG)
