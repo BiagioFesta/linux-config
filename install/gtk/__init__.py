@@ -19,4 +19,4 @@ def check():
 
     utilities.system.check_icon_theme('Papirus-Dark')
 
-    utilities.system.check_theme('Orchis')
+    utilities.system.check_theme('Orchis-Dark')
