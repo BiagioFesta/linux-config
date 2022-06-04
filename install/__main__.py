@@ -8,6 +8,7 @@ import gtk
 import picom
 import alacritty
 import redshift
+import dunst
 
 
 MODULES = [
@@ -42,6 +43,10 @@ MODULES = [
     {
         'name': 'redshift',
         'module': redshift
+    },
+    {
+        'name': 'dunst',
+        'module': dunst
     }]
 
 

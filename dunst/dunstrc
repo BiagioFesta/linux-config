@@ -1,0 +1,41 @@
+[global]
+  monitor = 0
+  origin = top-right
+  width = (400, 400)
+  height = 100
+  offset = 20x50
+
+  font = Source Code Pro 9
+  icon_theme = Papirus-Dark
+  progress_bar = true
+  transparency = 5
+  corner_radius = 3
+
+  frame_width = 1
+  frame_color = "#aaaaaa"
+
+  gaps = true
+  gap_size = 100
+
+  mouse_left_click = close_current
+  mouse_middle_click = do_action, close_current
+  mouse_right_click = close_all
+
+  idle_threshold = 10
+
+  markup = full
+  format = "<b>%s</b>\n\n%b"
+
+  icon_position = left
+  icon_path = /usr/share/icons/Papirus-Dark/32x32/actions:/usr/share/icons/Papirus-Dark/32x32/apps:/usr/share/icons/Papirus-Dark/32x32/categories:/usr/share/icons/Papirus-Dark/32x32/devices:/usr/share/icons/Papirus-Dark/32x32/emblems:/usr/share/icons/Papirus-Dark/32x32/emotes:/usr/share/icons/Papirus-Dark/32x32/mimetypes:/usr/share/icons/Papirus-Dark/32x32/places:/usr/share/icons/Papirus-Dark/32x32/status
+
+
+[urgency_low]
+  background = "#1F1B25"
+  foreground = "#ffffff"
+  timeout = 2
+
+[urgency_normal]
+  background = "#1F1B25"
+  foreground = "#ffffff"
+  timeout = 2
