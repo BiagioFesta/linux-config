@@ -125,3 +125,11 @@ def check_file(filename: str, prefix_home: bool = True):
 
     if not is_file_exists(filename, prefix_home=False):
         print("[WARN]: required file '{}' does not exist".format(filename))
+
+
+def check_path(filepath: str, prefix_home: bool = True):
+    filepath = os.path.join(home_dir(), filepath) if prefix_home else filepath
+
+    if not is_path_exists(filepath, prefix_home=False):
+        print("[WARN]: required directory '{}' does not exist"
+              .format(filepath))

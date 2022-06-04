@@ -147,3 +147,6 @@ exec --no-startup-id emacs --fg-daemon
 
 # Startup Notification
 exec --no-startup-id notify-send --urgency=normal --icon=${HOME}/.config/i3/startup_icon.svg "Desktop Startup" "Desktop Manager has been started"
+
+# Adds
+include ~/.config/i3/config.d/*
