@@ -60,10 +60,11 @@ def check_icon_theme(theme: str):
                  '~/.local/share/icons']
 
     for font_dir in FONTS_DIR:
-        for item in os.listdir(font_dir):
-            filepath = os.path.join(font_dir, item)
-            if os.path.isdir(filepath) and item == theme:
-                return
+        if utilities.fs.is_path_exists(font_dir, prefix_home=False):
+            for item in os.listdir(font_dir):
+                filepath = os.path.join(font_dir, item)
+                if os.path.isdir(filepath) and item == theme:
+                    return
 
     print("[WARN]: Icon theme '{}' seems to not be installed on the system"
           .format(theme))
