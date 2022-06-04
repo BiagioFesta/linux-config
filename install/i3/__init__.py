@@ -1,6 +1,8 @@
 import utilities.system
 import utilities.fs
 import os
+import subprocess
+import re
 
 I3_CONFIG_DIR = '.config/i3'
 I3_CONFIG = os.path.join(I3_CONFIG_DIR, 'config')
@@ -50,3 +52,24 @@ def check():
     utilities.fs.check_file(os.path.join(I3_CONFIG_DIR, 'startup_icon.svg'))
 
     utilities.fs.check_path(I3_ADDS_CONFIG_DIR)
+
+    _check_i3_version()
+
+
+def _check_i3_version():
+    ans = subprocess.run(["i3", "--version"], capture_output=True, check=True)
+    stdout = ans.stdout.decode('utf-8')
+    m = re.search(r'version ((\d+)\.(\d+)\.(\d+))', stdout)
+    if m:
+        version = m.group(1)
+        major = int(m.group(2))
+        minor = int(m.group(3))
+
+        if major >= 4 and minor >= 20:
+            return
+
+        print("[WARN]: i3 detected version ('{}') does not support 'include' "
+              "directive. Required >= i3 v4.20".format(version))
+
+    else:
+        raise Exception("Cannot detect the version of i3 '{}'".format(stdout))
