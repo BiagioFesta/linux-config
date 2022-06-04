@@ -7,6 +7,7 @@ POLYBAR_CONFIG_DIR='.config/polybar'
 POLYBAR_CONFIG=os.path.join(POLYBAR_CONFIG_DIR, 'config.ini')
 POLYBAR_LAUNCHER=os.path.join(POLYBAR_CONFIG_DIR, 'polybar-restart.sh')
 
+
 def install():
     utilities.fs.create_dir(POLYBAR_CONFIG_DIR)
     utilities.fs.create_symlink('polybar/config.ini', POLYBAR_CONFIG)
