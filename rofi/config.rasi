@@ -1,0 +1,6 @@
+configuration {
+  modi: "drun";
+  icon-theme: "Papirus-Dark";
+  show-icons: true;
+}
+@theme "nord"

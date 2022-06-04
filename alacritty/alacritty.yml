@@ -1,0 +1,28 @@
+window:
+  opacity: 0.9
+  padding:
+    x: 3
+    y: 3
+
+font:
+  size: 9
+  normal:
+    family: Source Code Pro
+    style: Regular
+  bold:
+    family: Source Code Pro
+    style: Bold
+  italic:
+    family: Source Code Pro
+    style: Italic
+  bold_italic:
+    family: Source Code Pro
+    style: Bold Italic
+
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#c5c8c6'
+
+env:
+  WINIT_X11_SCALE_FACTOR: "1.0"

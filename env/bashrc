@@ -1,0 +1,10 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias e='emacsclient'
+
+# Source Adds
+if [ -d "${HOME}/.env/bashrc.d" ]; then
+    for f in $(find "${HOME}/.env/bashrc.d" -type f); do
+        source "${f}"
+    done
+fi

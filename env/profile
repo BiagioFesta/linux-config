@@ -1,0 +1,21 @@
+# Bashrc
+if [ -n "${BASH_VERSION}" ]; then
+    if [ -f "${HOME}/.bashrc" ]; then
+        source "${HOME}/.bashrc"
+    fi
+fi
+
+# Local binaries
+if [ -d "${HOME}/.local/bin" ]; then
+    export PATH="${HOME}/.local/bin:${PATH}"
+fi
+
+# Source Adds
+if [ -d "${HOME}/.env/profile.d" ]; then
+    for f in $(find "${HOME}/.env/profile.d" -type f); do
+        source "${f}"
+    done
+fi
+
+export TERMINAL=alacritty
+export EDITOR=emacs
