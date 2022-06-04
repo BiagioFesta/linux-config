@@ -3,8 +3,8 @@ import utilities.fs
 import os
 
 
-REDSHIFT_CONFIG_DIR='.config/redshift'
-REDSHIFT_CONFIG=os.path.join(REDSHIFT_CONFIG_DIR, 'redshift.conf')
+REDSHIFT_CONFIG_DIR = '.config/redshift'
+REDSHIFT_CONFIG = os.path.join(REDSHIFT_CONFIG_DIR, 'redshift.conf')
 
 
 def install():

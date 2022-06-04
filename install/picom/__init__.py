@@ -3,8 +3,9 @@ import utilities.fs
 import os
 
 
-PICOM_CONFIG_DIR='.config/picom'
-PICOM_CONFIG=os.path.join(PICOM_CONFIG_DIR, 'picom.conf')
+PICOM_CONFIG_DIR = '.config/picom'
+PICOM_CONFIG = os.path.join(PICOM_CONFIG_DIR, 'picom.conf')
+
 
 def install():
     utilities.fs.create_dir(PICOM_CONFIG_DIR)

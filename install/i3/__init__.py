@@ -2,9 +2,9 @@ import utilities.system
 import utilities.fs
 import os
 
-I3_CONFIG_DIR='.config/i3'
-I3_CONFIG=os.path.join(I3_CONFIG_DIR, 'config')
-WALLPAPERS_DIR='.wallpapers'
+I3_CONFIG_DIR = '.config/i3'
+I3_CONFIG = os.path.join(I3_CONFIG_DIR, 'config')
+WALLPAPERS_DIR = '.wallpapers'
 
 
 def install():
@@ -12,10 +12,14 @@ def install():
     utilities.fs.create_symlink('i3/config', I3_CONFIG)
 
     utilities.fs.create_dir(WALLPAPERS_DIR)
-    utilities.fs.create_symlink('i3/wg1.jpg', os.path.join(WALLPAPERS_DIR, 'wg1.jpg'))
-    utilities.fs.create_symlink('i3/wg2.png', os.path.join(WALLPAPERS_DIR, 'wg2.png'))
+    utilities.fs.create_symlink('i3/wg1.jpg',
+                                os.path.join(WALLPAPERS_DIR, 'wg1.jpg'))
+    utilities.fs.create_symlink('i3/wg2.png',
+                                os.path.join(WALLPAPERS_DIR, 'wg2.png'))
 
-    utilities.fs.create_symlink('i3/startup_icon.svg', os.path.join(I3_CONFIG_DIR, 'startup_icon.svg'))
+    utilities.fs.create_symlink('i3/startup_icon.svg',
+                                os.path.join(I3_CONFIG_DIR,
+                                             'startup_icon.svg'))
 
 
 def check():

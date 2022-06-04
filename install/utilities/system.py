@@ -6,7 +6,7 @@ import utilities.fs
 
 
 def is_linux() -> bool:
-    return sys.platform == "linux" or platform == "linux2"
+    return sys.platform == "linux" or sys.platform == "linux2"
 
 
 def is_bin(binary: str) -> bool:
@@ -21,16 +21,19 @@ def is_bin(binary: str) -> bool:
 
 def check_binary(binary: str):
     if not is_bin(binary):
-        print("[WARN]: binary '{}' seems to not be installed on the system".format(binary))
+        print("[WARN]: binary '{}' seems to not be installed on the system"
+              .format(binary))
 
 
 def check_font(font: str):
     if not is_linux():
-        print("[WARN]: Cannot check '{}' font: not linux platform".format(font))
+        print("[WARN]: Cannot check '{}' font: not linux platform"
+              .format(font))
         return
 
     if not is_bin('fc-list'):
-        print("[WARN]: Cannot check '{}' font: 'fc-list' cmd not installed".format(font))
+        print("[WARN]: Cannot check '{}' font: 'fc-list' cmd not installed"
+              .format(font))
         return
 
     output = subprocess.run(["fc-list"], capture_output=True, check=True)
@@ -43,7 +46,8 @@ def check_font(font: str):
                 if n == font:
                     return
 
-    print("[WARN]: font '{}' seems to not be installed on the system".format(font))
+    print("[WARN]: font '{}' seems to not be installed on the system"
+          .format(font))
 
 
 def check_icon_theme(theme: str):
@@ -61,12 +65,14 @@ def check_icon_theme(theme: str):
             if os.path.isdir(filepath) and item == theme:
                 return
 
-    print("[WARN]: Icon theme '{}' seems to not be installed on the system".format(theme))
+    print("[WARN]: Icon theme '{}' seems to not be installed on the system"
+          .format(theme))
 
 
 def check_theme(theme: str):
     if not is_linux():
-        print("[WARN]: Cannot check '{}' theme. Not linux platform".format(theme))
+        print("[WARN]: Cannot check '{}' theme. Not linux platform"
+              .format(theme))
         return
 
     THEMES_DIR = ['/usr/share/themes',
@@ -79,4 +85,5 @@ def check_theme(theme: str):
                 if os.path.isdir(filepath) and item == theme:
                     return
 
-    print("[WARN]: Theme '{}' seems to not be installed on the system".format(theme))
+    print("[WARN]: Theme '{}' seems to not be installed on the system"
+          .format(theme))

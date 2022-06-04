@@ -3,8 +3,8 @@ import utilities.system
 import os
 
 
-GTK3_CONFIG_DIR='.config/gtk-3.0'
-GTK3_CONFIG=os.path.join(GTK3_CONFIG_DIR, 'settings.ini')
+GTK3_CONFIG_DIR = '.config/gtk-3.0'
+GTK3_CONFIG = os.path.join(GTK3_CONFIG_DIR, 'settings.ini')
 
 
 def install():

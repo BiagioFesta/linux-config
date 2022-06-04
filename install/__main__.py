@@ -1,6 +1,5 @@
 import env
 import i3
-import os
 import polybar
 import traceback
 import utilities.system
@@ -45,6 +44,7 @@ MODULES = [
         'module': redshift
     }]
 
+
 def _install() -> bool:
     for module in MODULES:
         module_name = module['name']
@@ -57,13 +57,14 @@ def _install() -> bool:
         except Exception as err:
             print('\n' + traceback.format_exc())
             print("\n!!ERROR: {}".format(err))
-            ans = input("Error during installation of module '{}'. You wanna ABORT? [Yn]: "
-                        .format(module_name))
+            ans = input("Error during installation of module '{}'. "
+                        "You wanna ABORT? [Yn]: ".format(module_name))
             if ans != 'n' and ans != 'N':
                 print("  Process aborted with errors")
                 return False
 
     return True
+
 
 def _check():
     for module in MODULES:
@@ -71,7 +72,7 @@ def _check():
         module = module['module']
 
         print("Checking '{}' module...".format(module_name))
-        module.check();
+        module.check()
 
     # Additional checks
     for binary in ['pavucontrol',

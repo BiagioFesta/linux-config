@@ -3,8 +3,8 @@ import utilities.fs
 import os
 
 
-ALACRITTY_CONFIG_DIR='.config/alacritty'
-ALACRITTY_CONFIG=os.path.join(ALACRITTY_CONFIG_DIR, 'alacritty.yml')
+ALACRITTY_CONFIG_DIR = '.config/alacritty'
+ALACRITTY_CONFIG = os.path.join(ALACRITTY_CONFIG_DIR, 'alacritty.yml')
 
 
 def install():

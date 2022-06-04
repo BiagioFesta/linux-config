@@ -3,9 +3,9 @@ import utilities.fs
 import os
 
 
-ROFI_CONFIG_DIR='.config/rofi'
-ROFI_CONFIG=os.path.join(ROFI_CONFIG_DIR, 'config.rasi')
-NORD_CONFIG=os.path.join(ROFI_CONFIG_DIR, 'nord.rasi')
+ROFI_CONFIG_DIR = '.config/rofi'
+ROFI_CONFIG = os.path.join(ROFI_CONFIG_DIR, 'config.rasi')
+NORD_CONFIG = os.path.join(ROFI_CONFIG_DIR, 'nord.rasi')
 
 
 def install():
