@@ -8,3 +8,7 @@ if [ -d "${HOME}/.env/bashrc.d" ]; then
         source "${f}"
     done
 fi
+
+# Local Variables:
+# mode: sh
+# End:
