@@ -24,8 +24,8 @@ def check():
     utilities.system.check_font('Font Awesome 5 Free')
     utilities.system.check_font('Iosevka Nerd Font')
 
-    if not utilities.fs.is_file_exists('/sys/class/power_supply/BAT0', prefix_home=False):
+    if not utilities.fs.is_path_exists('/sys/class/power_supply/BAT0', prefix_home=False):
         print("[WARN]: '/sys/class/power_supply/BAT0' not found. Probably polybar battery module will not work")
 
-    if not utilities.fs.is_file_exists('/sys/class/backlight/intel_backlight', prefix_home=False):
+    if not utilities.fs.is_path_exists('/sys/class/backlight/intel_backlight', prefix_home=False):
         print("[WARN]: '/sys/class/backlight/intel_backlight' not found. Probably polybar backlight module will not work")
