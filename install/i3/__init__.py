@@ -41,6 +41,7 @@ def check():
     utilities.system.check_binary('pasystray')
     utilities.system.check_binary('redshift')
     utilities.system.check_binary('redshift-gtk')
+    utilities.system.check_binary('blueman-applet')
     utilities.system.check_binary('pactl')
     utilities.system.check_binary('brightnessctl')
     utilities.system.check_binary('notify-send')

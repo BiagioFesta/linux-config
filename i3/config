@@ -143,6 +143,7 @@ exec_always --no-startup-id xset r rate 200 100
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec --no-startup-id redshift-gtk
+exec --no-startup-id blueman-applet
 
 # Daemons
 exec --no-startup-id emacs --fg-daemon
