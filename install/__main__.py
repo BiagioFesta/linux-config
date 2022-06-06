@@ -9,6 +9,7 @@ import picom
 import alacritty
 import redshift
 import dunst
+import X
 
 
 MODULES = [
@@ -47,6 +48,10 @@ MODULES = [
     {
         'name': 'dunst',
         'module': dunst
+    },
+    {
+        'name': 'X',
+        'module': X
     }]
 
 
