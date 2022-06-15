@@ -10,6 +10,7 @@ import alacritty
 import redshift
 import dunst
 import X
+import argparse
 
 
 MODULES = [
@@ -94,7 +95,15 @@ def _check():
 
 
 def _main():
-    _install()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--only-check',
+                        required=False,
+                        action=argparse.BooleanOptionalAction)
+
+    args = parser.parse_args()
+
+    if not args.only_check:
+        _install()
     _check()
 
 
