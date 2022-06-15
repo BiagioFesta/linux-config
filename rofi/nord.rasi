@@ -91,7 +91,7 @@ element selected active {
 }
 
 element-icon {
-    size:   5.0ch ;
+    size:   2.0ch ;
 }
 
 element-text {
