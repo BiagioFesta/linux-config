@@ -59,7 +59,12 @@ def check():
 
 
 def _check_i3_version():
-    ans = subprocess.run(["i3", "--version"], capture_output=True, check=True)
+    ans = subprocess.run(["i3", "--version"], capture_output=True, check=False)
+
+    if ans.returncode != 0:
+        print("[WARN]: Cannot check i3 version because binary not found")
+        return
+
     stdout = ans.stdout.decode('utf-8')
     m = re.search(r'version ((\d+)\.(\d+)\.(\d+))', stdout)
     if m:
