@@ -96,13 +96,14 @@ def _check():
 
 def _main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--only-check',
+    parser.add_argument('--check',
                         required=False,
-                        action=argparse.BooleanOptionalAction)
+                        default=False,
+                        action='store_true')
 
     args = parser.parse_args()
 
-    if not args.only_check:
+    if not args.check:
         _install()
     _check()
 
