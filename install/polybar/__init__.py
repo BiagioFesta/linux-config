@@ -6,12 +6,15 @@ import os
 POLYBAR_CONFIG_DIR = '.config/polybar'
 POLYBAR_CONFIG = os.path.join(POLYBAR_CONFIG_DIR, 'config.ini')
 POLYBAR_LAUNCHER = os.path.join(POLYBAR_CONFIG_DIR, 'polybar-restart.sh')
+POLYBAR_DUNST_TOGGLE = os.path.join(POLYBAR_CONFIG_DIR, 'dunst-toggle.sh')
 
 
 def install():
     utilities.fs.create_dir(POLYBAR_CONFIG_DIR)
     utilities.fs.create_symlink('polybar/config.ini', POLYBAR_CONFIG)
     utilities.fs.create_symlink('polybar/polybar-restart.sh', POLYBAR_LAUNCHER)
+    utilities.fs.create_symlink('polybar/dunst-toggle.sh',
+                                POLYBAR_DUNST_TOGGLE)
 
 
 def check():
@@ -21,6 +24,7 @@ def check():
 
     utilities.fs.check_file(POLYBAR_CONFIG)
     utilities.fs.check_file(POLYBAR_LAUNCHER)
+    utilities.fs.check_file(POLYBAR_DUNST_TOGGLE)
 
     utilities.system.check_font('Source Code Pro')
     utilities.system.check_font('Font Awesome 5 Free')
