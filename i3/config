@@ -148,5 +148,8 @@ exec --no-startup-id blueman-applet
 # Startup Notification
 exec --no-startup-id notify-send --urgency=normal --icon=${HOME}/.config/i3/startup_icon.svg "Desktop Startup" "Desktop Manager has been started"
 
+# Battery alert daemon script
+exec --no-startup-id bash ${HOME}/.config/i3/battery_alert.sh
+
 # Adds
 include ~/.config/i3/config.d/*
