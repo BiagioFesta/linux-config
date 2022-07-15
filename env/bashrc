@@ -1,5 +1,6 @@
-alias ll='ls -alF'
-alias la='ls -A'
+alias ls='ls --color'
+alias ll='ls -alF --color'
+alias la='ls -A --color'
 alias e='emacsclient'
 
 # Source Adds
