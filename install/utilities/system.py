@@ -88,3 +88,19 @@ def check_theme(theme: str):
 
     print("[WARN]: Theme '{}' seems to not be installed on the system"
           .format(theme))
+
+
+def check_systemd_unit(unit_name: str):
+    if not is_linux():
+        print("[WARN]: Cannot check '{}' systemd unit. Not linux platform"
+              .format(unit_name))
+        return
+
+    ans = subprocess.run(["systemctl", "--user", "cat", unit_name],
+                         capture_output=True,
+                         check=False)
+
+    if ans.returncode != 0:
+        print("[WARN]: Systemd unit file '{}' seems to not be installed on"
+              " the system"
+              .format(unit_name))

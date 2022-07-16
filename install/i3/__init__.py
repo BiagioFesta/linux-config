@@ -59,6 +59,8 @@ def check():
 
     utilities.fs.check_path(I3_ADDS_CONFIG_DIR)
 
+    utilities.system.check_systemd_unit('i3-autolayout')
+
     _check_i3_version()
 
 
