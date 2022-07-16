@@ -2,6 +2,7 @@ alias ls='ls --color'
 alias ll='ls -alF --color'
 alias la='ls -A --color'
 alias e='emacsclient'
+alias em='emacs -nw'
 
 # Source Adds
 if [ -d "${HOME}/.env/bashrc.d" ]; then
