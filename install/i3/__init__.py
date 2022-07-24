@@ -50,6 +50,7 @@ def check():
     utilities.system.check_binary('notify-send')
     utilities.system.check_binary('dunst')
     utilities.system.check_binary('dunstctl')
+    utilities.system.check_binary('i3-autolayout')
 
     utilities.fs.check_file(I3_CONFIG)
     utilities.fs.check_file(os.path.join(WALLPAPERS_DIR, 'wg1.jpg'))
