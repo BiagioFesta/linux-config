@@ -62,6 +62,8 @@ def check():
 
     utilities.system.check_systemd_unit('i3-autolayout')
 
+    utilities.system.check_font('Source Code Pro')
+
     _check_i3_version()
 
 

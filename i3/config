@@ -119,7 +119,7 @@ exec_always --no-startup-id bash ${HOME}/.config/polybar/polybar-restart.sh
 
 
 # Window appearance
-#font pango:Source Code Pro 8
+font pango:Source Code Pro 8
 for_window [ class = ".*" ] border pixel 3
 gaps inner 10
 gaps top 22
