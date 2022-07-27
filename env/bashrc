@@ -4,6 +4,22 @@ alias la='ls -A --color'
 alias e='emacsclient'
 alias em='emacs -nw'
 
+alias cmake-debug='C_CC_FLAGS="-Wall -Wextra --pedantic -fsanitize=undefined -fsanitize=address -ggdb -g3 -O0"
+                   cmake -GNinja \
+                         -DCMAKE_BUILD_TYPE=Debug \
+                         -DCMAKE_EXPORT_COMPILE_COMMANDS=YES \
+                         -DCMAKE_C_FLAGS="${C_CC_FLAGS}" \
+                         -DCMAKE_CXX_FLAGS="${C_CC_FLAGS}"'
+
+alias cmake-release='C_CC_FLAGS="-flto -O3"
+                     LINKER_FLAGS="-flto"
+                     cmake -GNinja \
+                           -DCMAKE_BUILD_TYPE=Release \
+                           -DCMAKE_EXPORT_COMPILE_COMMANDS=YES \
+                           -DCMAKE_C_FLAGS="${C_CC_FLAGS}" \
+                           -DCMAKE_CXX_FLAGS="${C_CC_FLAGS}" \
+                           -DCMAKE_EXE_LINKER_FLAGS="${LINKER_FLAGS}"'
+
 # Source Adds
 if [ -d "${HOME}/.env/bashrc.d" ]; then
     for f in $(find "${HOME}/.env/bashrc.d" -type f); do
