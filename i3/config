@@ -153,7 +153,7 @@ exec --no-startup-id notify-send --urgency=normal --icon=${HOME}/.config/i3/star
 exec --no-startup-id bash ${HOME}/.config/i3/battery_alert.sh
 
 # i3-autolayout service
-exec_always systemctl --user start i3-autolayout
+exec_always --no-startup-id systemctl --user start i3-autolayout
 
 # Adds
 include ~/.config/i3/config.d/*
