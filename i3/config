@@ -137,7 +137,7 @@ exec_always --no-startup-id feh --bg-scale ${HOME}/.wallpapers/wg1.jpg
 exec_always --no-startup-id picom --config ${HOME}/.config/picom/picom.conf
 
 # Keyboard configuration
-exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option compose:rctrl
+exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option compose:rctrl -option caps:swapescape
 exec_always --no-startup-id xset r rate 200 100
 
 # Trays
