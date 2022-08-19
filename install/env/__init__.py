@@ -48,3 +48,4 @@ def check():
             print("The file '{}' should not exist".format(f))
 
     utilities.system.check_binary('alacritty')
+    utilities.system.check_binary('neofetch')

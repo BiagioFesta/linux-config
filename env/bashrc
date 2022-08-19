@@ -49,6 +49,8 @@ function display_prompt() {
 
 display_prompt
 
+neofetch
+
 # Local Variables:
 # mode: sh
 # End:
