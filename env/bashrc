@@ -51,11 +51,6 @@ display_prompt
 
 neofetch
 
-# fzf
-if [[ ${TERM} != "dumb" ]]; then
-    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-fi
-
 # Local Variables:
 # mode: sh
 # End:
