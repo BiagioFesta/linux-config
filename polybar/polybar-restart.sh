@@ -11,4 +11,14 @@ set +e
 ${POLYBAR_MSG} cmd quit
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
-${POLYBAR} 2>&1 | tee /tmp/polybar.log & disown
+for d in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    export MONITOR="${d}"
+
+    if xrandr --query | grep "${d}" | grep -q "primary"; then
+        export TRAY_POS="right"
+    else
+        export TRAY_POS="none"
+    fi
+
+    ${POLYBAR} 2>&1 | tee /tmp/polybar.log & disown
+done
