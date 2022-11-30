@@ -13,6 +13,9 @@ fi
 export TERMINAL=alacritty
 export EDITOR=emacs
 
+# SSH-Agent
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+
 # Source Adds
 if [ -d "${HOME}/.env/profile.d" ]; then
     for f in $(find "${HOME}/.env/profile.d" -type f); do

@@ -11,6 +11,7 @@ import redshift
 import dunst
 import X
 import argparse
+import ssh
 
 
 MODULES = [
@@ -53,7 +54,12 @@ MODULES = [
     {
         'name': 'X',
         'module': X
-    }]
+    },
+    {
+        'name': 'ssh',
+        'module': ssh,
+    },
+]
 
 
 def _install() -> bool:
