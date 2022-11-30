@@ -50,5 +50,3 @@ def check():
     utilities.system.check_binary('alacritty')
     utilities.system.check_binary('neofetch')
     utilities.system.check_binary('fzf')
-
-    utilities.fs.check_file(".fzf.bash")
