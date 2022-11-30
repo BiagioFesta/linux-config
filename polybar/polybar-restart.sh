@@ -11,6 +11,9 @@ set +e
 ${POLYBAR_MSG} cmd quit
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
+# Sleep to be sure applet have been loaded at the i3-startup
+sleep 1
+
 for d in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     export MONITOR="${d}"
 
