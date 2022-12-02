@@ -90,7 +90,7 @@ def check_theme(theme: str):
           .format(theme))
 
 
-def check_systemd_unit(unit_name: str):
+def check_systemd_unit(unit_name: str, check_enabled: bool = False):
     if not is_linux():
         print("[WARN]: Cannot check '{}' systemd unit. Not linux platform"
               .format(unit_name))
@@ -104,3 +104,31 @@ def check_systemd_unit(unit_name: str):
         print("[WARN]: Systemd unit file '{}' seems to not be installed on"
               " the system"
               .format(unit_name))
+        return
+
+    if check_enabled == False:
+        return
+
+    ans = subprocess.run(["systemctl", "--user", "status", unit_name],
+                         capture_output=True,
+                         check=False)
+
+    output = ans.stdout.decode('utf-8').splitlines()
+    if len(output) < 3:
+        print("[WARN]: Cannot parse systemd unit file '{}' status".format(unit_name))
+        return
+
+    loaded = output[1].strip()
+    active = output[2].strip()
+
+    m = re.match(r"Loaded: loaded \(.*; (.*); preset: (.*)\)", loaded)
+    if m is None:
+        print("[WARN]: Cannot parse systemd unit file '{}' status/loaded".format(unit_name))
+    elif m.group(1) != 'enabled':
+        print("[WARN]: It seems systemd unit file '{}' is not enabled".format(unit_name))
+
+    m = re.match(r"Active: ([^\s]*)\s.*", active)
+    if m is None:
+        print("[WARN]: Cannot parse systemd unit file '{}' status/active".format(unit_name))
+    elif m.group(1) != 'active':
+        print("[WARN]: It seems systemd unit file '{}' is not active".format(unit_name))
