@@ -12,6 +12,7 @@ import dunst
 import X
 import argparse
 import ssh
+import xdg
 
 
 MODULES = [
@@ -58,6 +59,10 @@ MODULES = [
     {
         'name': 'ssh',
         'module': ssh,
+    },
+    {
+        'name': 'xdg',
+        'module': xdg,
     },
 ]
 
