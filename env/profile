@@ -12,6 +12,7 @@ fi
 
 export TERMINAL=alacritty
 export EDITOR=emacs
+export PAGER=less
 
 # SSH-Agent
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
