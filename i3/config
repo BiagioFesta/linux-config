@@ -161,6 +161,7 @@ exec_always --no-startup-id systemctl --user start i3-autolayout
 
 # Windows specific behavior
 for_window [ class = "Arandr" ] floating enable
+for_window [ class = "Nsxiv" ] floating enable
 
 # Adds
 include ~/.config/i3/config.d/*
