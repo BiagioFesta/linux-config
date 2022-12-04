@@ -49,6 +49,7 @@ def check():
     utilities.system.check_binary('dunstctl')
     utilities.system.check_binary('i3-autolayout')
     utilities.system.check_binary('playerctl')
+    utilities.system.check_binary('ranger')
 
     utilities.fs.check_file(I3_CONFIG)
     utilities.fs.check_file(os.path.join(WALLPAPERS_DIR, 'wg1.jpg'))
