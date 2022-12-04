@@ -13,6 +13,7 @@ import X
 import argparse
 import ssh
 import xdg
+import ranger
 
 
 MODULES = [
@@ -63,6 +64,10 @@ MODULES = [
     {
         'name': 'xdg',
         'module': xdg,
+    },
+    {
+        'name': 'ranger',
+        'module': ranger,
     },
 ]
 
