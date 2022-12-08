@@ -97,7 +97,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 bindsym $mod+Escape exec --no-startup-id dunstctl close-all
 
-#bindsym $mod+z exec ${HOME}/bin/lock-screen.sh
+bindsym $mod+z exec bash ${HOME}/.config/i3/i3lock-wrapper.sh
 
 floating_modifier $mod
 

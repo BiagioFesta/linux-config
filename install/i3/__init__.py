@@ -8,6 +8,7 @@ I3_CONFIG_DIR = '.config/i3'
 I3_CONFIG = os.path.join(I3_CONFIG_DIR, 'config')
 WALLPAPERS_DIR = '.wallpapers'
 I3_ADDS_CONFIG_DIR = os.path.join(I3_CONFIG_DIR, 'config.d')
+I3_LOCK_WRAPPER = os.path.join(I3_CONFIG_DIR, 'i3lock-wrapper.sh')
 
 
 def install():
@@ -25,6 +26,8 @@ def install():
                                              'startup_icon.svg'))
 
     utilities.fs.create_dir(I3_ADDS_CONFIG_DIR)
+
+    utilities.fs.create_symlink('i3/i3lock-wrapper.sh', I3_LOCK_WRAPPER)
 
 
 def check():
@@ -50,11 +53,14 @@ def check():
     utilities.system.check_binary('i3-autolayout')
     utilities.system.check_binary('playerctl')
     utilities.system.check_binary('ranger')
+    utilities.system.check_binary('scrot')
+    utilities.system.check_binary('convert')
 
     utilities.fs.check_file(I3_CONFIG)
     utilities.fs.check_file(os.path.join(WALLPAPERS_DIR, 'wg1.jpg'))
     utilities.fs.check_file(os.path.join(WALLPAPERS_DIR, 'wg2.png'))
     utilities.fs.check_file(os.path.join(I3_CONFIG_DIR, 'startup_icon.svg'))
+    utilities.fs.check_file(I3_LOCK_WRAPPER)
 
     utilities.fs.check_path(I3_ADDS_CONFIG_DIR)
 
