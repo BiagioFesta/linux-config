@@ -53,6 +53,7 @@ def check():
     utilities.system.check_binary('i3-autolayout')
     utilities.system.check_binary('playerctl')
     utilities.system.check_binary('ranger')
+    utilities.system.check_binary('i3lock')
     utilities.system.check_binary('ffmpeg')
 
     utilities.fs.check_file(I3_CONFIG)
