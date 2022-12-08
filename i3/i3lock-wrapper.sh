@@ -1,9 +1,14 @@
 #!/bin/bash
 
 IMAGE="/tmp/i3lock.png"
+IS_DUNST_PAUSED="$(dunstctl is-paused)"
 
 dunstctl set-paused true
-scrot "${IMAGE}"
-convert "${IMAGE}" -blur "15x15" "${IMAGE}"
+
+ffmpeg -f x11grab -y -i "${DISPLAY}" -filter_complex "boxblur=5:1" -vframes 1 "${IMAGE}" -loglevel quiet
+
 i3lock -f -i "${IMAGE}" --nofork
-dunstctl set-paused false
+
+if [ "${IS_DUNST_PAUSED}" = "false" ]; then
+    dunstctl set-paused false
+fi

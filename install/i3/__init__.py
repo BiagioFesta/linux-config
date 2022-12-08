@@ -53,8 +53,7 @@ def check():
     utilities.system.check_binary('i3-autolayout')
     utilities.system.check_binary('playerctl')
     utilities.system.check_binary('ranger')
-    utilities.system.check_binary('scrot')
-    utilities.system.check_binary('convert')
+    utilities.system.check_binary('ffmpeg')
 
     utilities.fs.check_file(I3_CONFIG)
     utilities.fs.check_file(os.path.join(WALLPAPERS_DIR, 'wg1.jpg'))
