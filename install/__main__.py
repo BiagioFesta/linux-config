@@ -14,6 +14,7 @@ import argparse
 import ssh
 import xdg
 import ranger
+import emacs
 
 
 MODULES = [
@@ -68,6 +69,10 @@ MODULES = [
     {
         'name': 'ranger',
         'module': ranger,
+    },
+    {
+        'name': 'emacs',
+        'module': emacs,
     },
 ]
 

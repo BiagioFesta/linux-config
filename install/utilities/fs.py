@@ -1,6 +1,9 @@
 import os
 
 
+SYSTEMD_SERVICE_UNIT_DIR = '.config/systemd/user'
+
+
 def home_dir() -> str:
     return os.environ['HOME']
 
