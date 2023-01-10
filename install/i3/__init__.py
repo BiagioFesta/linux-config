@@ -80,7 +80,7 @@ def _check_i3_version():
         return
 
     stdout = ans.stdout.decode('utf-8')
-    m = re.search(r'version ((\d+)\.(\d+)\.(\d+))', stdout)
+    m = re.search(r'version ((\d+)\.(\d+))', stdout)
     if m:
         version = m.group(1)
         major = int(m.group(2))
