@@ -16,7 +16,7 @@ set $ws10 "10"
 # Keybinds
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 bindsym $mod+Shift+Return exec --no-startup-id i3-sensible-terminal -e emacsclient -nw
-bindsym $mod+o exec --no-startup-id i3-sensible-terminal -e ranger
+bindsym $mod+o exec --no-startup-id i3-sensible-terminal -t ranger -e ranger
 bindsym $mod+m exec --no-startup-id emacsclient --create-frame
 
 bindsym $mod+Shift+q kill
@@ -164,6 +164,7 @@ exec_always --no-startup-id systemctl --user start i3-autolayout
 for_window [ class = "Arandr" ] floating enable
 for_window [ class = "Nsxiv" ] floating enable
 for_window [ class = "Shutter" ] floating enable
+for_window [title="ranger" class="Alacritty"] floating enable
 
 # Adds
 include ~/.config/i3/config.d/*
