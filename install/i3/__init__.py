@@ -20,6 +20,8 @@ def install():
                                 os.path.join(WALLPAPERS_DIR, 'wg1.jpg'))
     utilities.fs.create_symlink('i3/wg2.png',
                                 os.path.join(WALLPAPERS_DIR, 'wg2.png'))
+    utilities.fs.create_symlink('i3/wg3.jpg',
+                                os.path.join(WALLPAPERS_DIR, 'wg3.jpg'))
 
     utilities.fs.create_symlink('i3/startup_icon.svg',
                                 os.path.join(I3_CONFIG_DIR,
@@ -59,6 +61,7 @@ def check():
     utilities.fs.check_file(I3_CONFIG)
     utilities.fs.check_file(os.path.join(WALLPAPERS_DIR, 'wg1.jpg'))
     utilities.fs.check_file(os.path.join(WALLPAPERS_DIR, 'wg2.png'))
+    utilities.fs.check_file(os.path.join(WALLPAPERS_DIR, 'wg3.jpg'))
     utilities.fs.check_file(os.path.join(I3_CONFIG_DIR, 'startup_icon.svg'))
     utilities.fs.check_file(I3_LOCK_WRAPPER)
 
