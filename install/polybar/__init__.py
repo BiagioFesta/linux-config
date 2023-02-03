@@ -21,6 +21,8 @@ def check():
     utilities.system.check_binary('polybar')
     utilities.system.check_binary('polybar-msg')
     utilities.system.check_binary('dunstctl')
+    utilities.system.check_binary('date')
+    utilities.system.check_binary('yad')
 
     utilities.fs.check_file(POLYBAR_CONFIG)
     utilities.fs.check_file(POLYBAR_LAUNCHER)
