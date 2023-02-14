@@ -24,6 +24,9 @@ if [ -d "${HOME}/.env/profile.d" ]; then
     done
 fi
 
+# QT Theme
+QT_STYLE_OVERRIDE=kvantum
+
 # Local Variables:
 # mode: sh
 # End:
