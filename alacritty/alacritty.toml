@@ -1,0 +1,29 @@
+[colors.primary]
+background = "#000000"
+foreground = "#c5c8c6"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+size = 9
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+[window.padding]
+x = 3
+y = 3

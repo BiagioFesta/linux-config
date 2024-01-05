@@ -4,12 +4,12 @@ import os
 
 
 ALACRITTY_CONFIG_DIR = '.config/alacritty'
-ALACRITTY_CONFIG = os.path.join(ALACRITTY_CONFIG_DIR, 'alacritty.yml')
+ALACRITTY_CONFIG = os.path.join(ALACRITTY_CONFIG_DIR, 'alacritty.toml')
 
 
 def install():
     utilities.fs.create_dir(ALACRITTY_CONFIG_DIR)
-    utilities.fs.create_symlink('alacritty/alacritty.yml', ALACRITTY_CONFIG)
+    utilities.fs.create_symlink('alacritty/alacritty.toml', ALACRITTY_CONFIG)
 
 
 def check():
